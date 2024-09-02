@@ -51,13 +51,9 @@ const UpdateTask: React.FC<Props> = ({
     }
     try {
       console.log(task);
-      const res = await axios.put(
-        `http://localhost:3001/tasks/update/${_id}`,
-        task,
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.put(`/tasks/update/${_id}`, task, {
+        withCredentials: true,
+      });
       console.log(res.data);
       enqueueSnackbar("Task updated successfully", { variant: "success" });
       setCreate(true);
@@ -71,7 +67,7 @@ const UpdateTask: React.FC<Props> = ({
     e.preventDefault();
     try {
       const res = await axios.put(
-        `http://localhost:3001/tasks/complete/${_id}`,
+        `/tasks/complete/${_id}`,
         {
           completed: true,
         },
@@ -89,12 +85,9 @@ const UpdateTask: React.FC<Props> = ({
     e.preventDefault();
 
     try {
-      const res = await axios.delete(
-        `http://localhost:3001/tasks/delete/${_id}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const res = await axios.delete(`/tasks/delete/${_id}`, {
+        withCredentials: true,
+      });
 
       console.log(res.data);
       enqueueSnackbar("Task deleted successfully", { variant: "success" });

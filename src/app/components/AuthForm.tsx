@@ -50,10 +50,7 @@ const AuthForm: React.FC<Props> = ({ haveAnAccount }) => {
   async function handleRegister(e: any) {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:3001/user/register",
-        register
-      );
+      const res = await axios.post("/user/register", register);
 
       enqueueSnackbar("Account has been registered successfully", {
         variant: "success",
@@ -72,10 +69,10 @@ const AuthForm: React.FC<Props> = ({ haveAnAccount }) => {
     e.preventDefault();
 
     try {
-      const res = await axios.post("http://localhost:3001/user/login", login, {
+      const res = await axios.post(`/user/login`, login, {
         withCredentials: true,
       });
-      
+
       console.log(res.data);
       enqueueSnackbar("Logged in successfully", {
         variant: "success",

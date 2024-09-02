@@ -1,6 +1,5 @@
 import React from "react";
 import { CustomSection } from "./CustomComponents";
-import moment from "moment";
 
 interface Props {
   _id: string;
@@ -23,8 +22,6 @@ const Task: React.FC<Props> = ({
   setCreate,
   completed,
 }) => {
-  const formattedCreated = moment(createdAt).format("MM/DD/YYYY hh:mm:ss A");
-  const formattedUpdated = moment(updatedAt).format("MM/DD/YYYY hh:mm:ss A");
 
   function liftState(e: any) {
     e.preventDefault();

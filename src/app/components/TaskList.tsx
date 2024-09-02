@@ -36,7 +36,7 @@ const TaskList = () => {
   const router = useRouter();
   useEffect(() => {
     axios
-      .get("http://localhost:3001/user/", {
+      .get("/user/", {
         withCredentials: true,
       })
       .then((res) => {
@@ -53,7 +53,7 @@ const TaskList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/tasks", { withCredentials: true })
+      .get("/tasks", { withCredentials: true })
       .then((res) => {
         console.log(res.data);
         setTasks(res.data);

@@ -10,12 +10,3 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-/* 
-body {
-  overflow: hidden;
-}
-@media (max-width: 1410px) {
-  body {
-    overflow: auto;
-  }
-} */

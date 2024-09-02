@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { CustomSection, CustomButton } from "./CustomComponents";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -17,7 +16,7 @@ const NavBar: React.FC<Props> = ({ user }) => {
     e.preventDefault();
     try {
       await axios.post(
-        "http://localhost:3001/user/logout",
+        "/user/logout",
         {},
         {
           withCredentials: true,

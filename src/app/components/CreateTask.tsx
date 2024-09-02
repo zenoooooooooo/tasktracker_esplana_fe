@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { CustomSection, CustomButton, CustomInput } from "./CustomComponents";
 import axios from "axios";
 import { useSnackbar } from "notistack";
@@ -35,7 +35,7 @@ const CreateTask: React.FC<Props> = ({ setRefresher }) => {
       enqueueSnackbar("Please enter a title", { variant: "info" });
     }
     try {
-      const res = await axios.post("http://localhost:3001/tasks/create", task, {
+      const res = await axios.post("/tasks/create", task, {
         withCredentials: true,
       });
       enqueueSnackbar("Task created successfully", { variant: "success" });

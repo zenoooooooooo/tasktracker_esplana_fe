@@ -1,7 +1,6 @@
 "use client";
 import "./globals.css";
 import { SnackbarProvider } from "notistack";
-
 export default function RootLayout({
   children,
 }: {
@@ -10,9 +9,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <title>Task Tracker</title>
-      <SnackbarProvider>
-        <body suppressHydrationWarning={true}>{children}</body>
-      </SnackbarProvider>
+
+      <body suppressHydrationWarning={true}>
+        <SnackbarProvider>{children} </SnackbarProvider>
+      </body>
     </html>
   );
 }
